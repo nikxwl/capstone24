@@ -14,7 +14,7 @@
 	if(isset($_POST['login'])) {
 		$user_role = mysqli_real_escape_string($conn, $_POST['user_role']);
 		$username  = mysqli_real_escape_string($conn, $_POST['username']);
-		$password  = md5($_POST['password']);
+		$password  = ($_POST['password']);
 
 		// Check if the user has attempted to log in before
 		if (!isset($_SESSION['login_attempts'])) {
