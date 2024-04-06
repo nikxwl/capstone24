@@ -24,15 +24,7 @@ require_once 'sidebar.php';
         <div class="col-md-3">
           <?php if($row['user_type'] != 4): ?>
           <div class="card card-primary card-outline">
-            <div class="card-body box-profile">
-              <div class="text-center">
-                <?php if($row['image'] == ""): ?>
-                <img src="../dist/img/avatar.png" alt="User Avatar" class="img-size-50 img-circle">
-                <?php else: ?>
-                <img class="profile-user-img img-fluid img-circle"src="../images-users/<?php echo $row['image']; ?>"alt="User profile picture"  style="height: 90px; width: 90px; border-radius: 50%;">
-                <?php endif; ?>
-                
-              </div>
+            <div class="card-body box-profile"> 
               <h3 class="profile-username text-center"><?php echo ' '.$row['firstname'].' '.$row['lastname'].' '; ?></h3>
               <p class="text-muted text-center">
                 <?php
@@ -62,21 +54,7 @@ require_once 'sidebar.php';
               <p class="text-muted">
                 <?php echo ''.$row['house_no'].' '.$row['street_name'].' '.$row['purok'].' '.$row['zone'].' '.$row['barangay'].' '.$row['municipality'].' '.$row['province'].' '.$row['region'].''; ?>
               </p>
-              <hr>
-              <strong><i class="fa-solid fa-calendar-days"></i> Date registered</strong>
-              <p class="text-muted ml-3"><?php echo date("F d, Y h:i A", strtotime($row['created_at'])); ?></p>
-              <hr>
-              <!--  <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-              <p class="text-muted">
-                <span class="tag tag-danger">UI Design</span>
-                <span class="tag tag-success">Coding</span>
-                <span class="tag tag-info">Javascript</span>
-                <span class="tag tag-warning">PHP</span>
-                <span class="tag tag-primary">Node.js</span>
-              </p>
-              <hr>
-              <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p> -->
+              
             </div>
           </div>
         </div>
@@ -87,9 +65,6 @@ require_once 'sidebar.php';
               <ul class="nav nav-pills">
                 <li class="nav-item"><a class="nav-link active" href="#viewprofile" data-toggle="tab">Profile info</a></li>
                 <li class="nav-item"><a class="nav-link" href="#updateprofile" data-toggle="tab">Update info</a></li>
-                <?php if($row['user_type'] != 4): ?>
-                <li class="nav-item"><a class="nav-link" href="#profileupdate" data-toggle="tab">Profile update</a></li>
-                <?php endif; ?>
                 <li class="nav-item"><a class="nav-link" href="#accountsecurity" data-toggle="tab">Account security</a></li>
               </ul>
               </div><!-- /.card-header -->
@@ -174,15 +149,6 @@ require_once 'sidebar.php';
                       </div>
                     </div>
                     <?php endif; ?>
-                    <!-- <div class="form-group row">
-                      <div class="offset-sm-2 col-sm-10">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                          </label>
-                        </div>
-                      </div>
-                    </div> -->
                     <div class="form-group row">
                       <div class="offset-sm-2 col-sm-10">
                         <a type="button" class="btn bg-gradient-primary" href="#updateprofile" data-toggle="tab">Update info</a>
@@ -402,15 +368,6 @@ require_once 'sidebar.php';
                         </div>
                       </div>
                       <?php endif; ?>
-                      <!-- <div class="form-group row">
-                        <div class="offset-sm-2 col-sm-10">
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                            </label>
-                          </div>
-                        </div>
-                      </div> -->
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
                           <button type="submit" class="btn bg-gradient-primary" id="update_admin" name="update_profile_info">Submit</button>
@@ -449,38 +406,6 @@ require_once 'sidebar.php';
                       </div>
                     </form>
                   </div>
-                  <div class="tab-pane" id="profileupdate">
-                    <form action="process_update.php" method="POST" enctype="multipart/form-data">
-                      <input type="hidden" class="form-control" value="<?php echo $row['user_Id']; ?>" name="user_Id">
-                      <div class="row justify-content-center">
-                          <div class="col-lg-8">
-                            <div class="form-group">
-                              <label for="exampleInputFile" class="text-dark"><b>Update profile</b></label>
-                              <div class="input-group">
-                                <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="exampleInputFile" name="fileToUpload" onchange="getImagePreview(event)" required>
-                                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                </div>
-                                <!-- <div class="input-group-append">
-                                  <span class="input-group-text">Upload</span>
-                                </div> -->
-                              </div>
-                              <small class="form-text text-muted">Max. 500KB</small>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="form-group">
-                              <label for="imagePreview" class="text-dark"><b>Preview:</b></label>
-                              <div class="image-preview" style="border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f8f9fa;">
-                                <img id="imagePreview" src="../images/image-holder.png" alt="Image Preview" class="img-fluid" style="width: 100%;">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      <div class="ml-3">
-                        <button type="submit" class="ml-5 btn bg-gradient-primary" name="update_profile_admin">Submit</button>
-                      </div>
                     </form>
                   </div>
                 </div>

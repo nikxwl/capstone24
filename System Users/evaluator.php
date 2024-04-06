@@ -35,7 +35,6 @@ require_once 'sidebar.php';
               <table id="example1" class="table table-bordered table-hover table-sm text-sm">
                 <thead>
                   <tr>
-                    <th>PHOTO</th>
                     <th>NAME</th>
                     <th>GENDER</th>
                     <th>EMAIL/CONTACT</th>
@@ -49,11 +48,6 @@ require_once 'sidebar.php';
                   while ($row = mysqli_fetch_array($sql)) {
                   ?>
                   <tr>
-                    <td>
-                      <a data-toggle="modal" data-target="#viewphoto<?php echo $row['user_Id']; ?>">
-                        <img src="../images-users/<?php echo $row['image']; ?>" alt="" width="25" height="25" class="img-circle d-block m-auto">
-                      </a href="">
-                    </td>
                     <td><?php echo $row['firstname'].' '.$row['middlename'].' '.$row['lastname'].' '.$row['suffix']; ?></td>
                     <td><?php echo $row['gender']; ?></td>
                     <td><?php echo $row['email']; ?> <br> <span class="text-info"><?php if($row['contact'] !== '') { echo '+63 '.$row['contact']; } ?></span></td>

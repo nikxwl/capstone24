@@ -269,43 +269,14 @@
                         <small id="wrong_pass_alert" class="text-bold" style="font-style: italic; font-size: 12px;"></small>
                     </div>
                 </div>
-                
-                <div class="col-lg-12 mt-3 mb-2">
-                  <a class="h5 text-primary"><b>Additional information</b></a>
-                  <div class="dropdown-divider"></div>
-                </div>
-                <div class="col-lg-10 col-md-10 col-sm-9 col-12">
-                  <div class="form-group">
-                    <span class="text-dark"><b>Administrator's photo</b></span>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" name="fileToUpload" onchange="getImagePreview(event)" required>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                     <!--  <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div> -->
-                    </div>
-                    <p class="help-block text-danger">Max. 500KB</p>
-                  </div>
-                </div>
-                <!-- LOAD IMAGE PREVIEW -->
-                <div class="col-lg-2 col-md-2 col-sm-3 col-12">
-                  <div class="form-group">
-                    <label for="imagePreview" class="text-dark"><b>Preview:</b></label>
-                    <div class="image-preview" style="border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f8f9fa;">
-                      <img id="imagePreview" src="../images/image-holder.png" alt="Image Preview" class="img-fluid" style="width: 100%;">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- END ROW -->
+                </div> 
+             <!-- end row -->
             </div>
             <div class="card-footer">
               <a href="admin.php" class="btn btn-secondary"><i class="fa-solid fa-backward"></i> Cancel</a>
               <button type="submit" class="btn btn-primary float-right" name="create_admin" id="submit_button"><i class="fa-solid fa-floppy-disk"></i> Submit</button>
             </div>
-          </div>
+         </div>
         </form>
       </div>
     </div>
@@ -544,48 +515,6 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-lg-12 mt-3 mb-2">
-                  <a class="h5 text-primary"><b>Additional information</b></a>
-                  <div class="dropdown-divider"></div>
-                </div>
-                <div class="col-lg-10 col-md-10 col-sm-9 col-12">
-                  <div class="form-group">
-                    <span class="text-dark"><b>Administrator's photo</b></span>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" name="fileToUpload" onchange="getImagePreview(event)">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                     <!--  <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div> -->
-                    </div>
-                    <p class="help-block text-danger">Max. 500KB</p>
-                  </div>
-                </div>
-                <!-- LOAD IMAGE PREVIEW -->
-                <div class="col-lg-2 col-md-2 col-sm-3 col-12">
-                  <div class="form-group">
-                    <label for="imagePreview" class="text-dark"><b>Preview:</b></label>
-                    <div class="image-preview" style="border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f8f9fa;">
-                      <img id="imagePreview" src="<?php
-                          if (!empty($row['image'])) {
-                            $imagePath = '../images-users/' . $row['image'];
-                            if (file_exists($imagePath)) {
-                              echo $imagePath;
-                            } else {
-                              echo '../images/image-holder.png';
-                            }
-                          } else {
-                            echo '../images/image-holder.png';
-                          }
-                        ?>" alt="Image Preview" class="img-fluid" style="width: 100%;">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- END ROW -->
             </div>
             <div class="card-footer">
               <a href="admin.php" class="btn btn-secondary"><i class="fa-solid fa-backward"></i> Cancel</a>

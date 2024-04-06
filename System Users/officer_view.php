@@ -93,12 +93,6 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 col-12 text-dark">
-                  <div class="d-flex justify-content-center bg-dark d-block m-auto" style="max-height: 120px; min-height: 120px; width: 120px; border: 3px solid darkgray; overflow: hidden;">
-                      <img src="../images-users/<?php echo $row['image']; ?>" alt="Profile" class="img-fluid d-block m-auto" style="object-fit: cover; width: 100%; height: 100%;">
-                  </div>
-                  <p class="text-center text-sm text-muted">Profile</p>
-              </div>
             </div>
             <div class="row p-2">
               <div class="col-lg-12 mt-3 mb-2 col-md-12 col-sm-12 col-12">

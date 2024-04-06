@@ -43,4 +43,4 @@
       </div>
     </section>
 
-<?php require_once 'announcement_add.php'; require_once '../includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

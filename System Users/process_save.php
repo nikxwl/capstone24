@@ -7,8 +7,7 @@
 	// SAVE ADMIN - ADMIN_MGMT.PHP
 	if (isset($_POST['create_admin'])) {
 	    $user_type = "0";
-	    $path = "../images-users/";
-	    saveUser($conn, "admin_mgmt.php?page=create", $user_type, $path);
+	    saveUser($conn, "admin_mgmt.php?page=create", $user_type);
 	}
 
 
@@ -24,16 +23,14 @@
 	// SAVE EVALUATOR - EVALUATOR_MGMT.PHP
 	if (isset($_POST['create_evaluator'])) {
 		$user_type = "1";
-		$path = "../images-users/";
-	    saveUser($conn, "evaluator_mgmt.php?page=create", $user_type, $path);
+	    saveUser($conn, "evaluator_mgmt.php?page=create", $user_type);
 	}
 
 
 	// SAVE DEPARTMENT SECRETARY - DEPT_SECRETARY_MGMT.PHP
 	if (isset($_POST['create_dept_secretary'])) {
 		$user_type = "3";
-		$path = "../images-users/";
-	    saveUser($conn, "dept_secretary_mgmt.php?page=create", $user_type, $path);
+	    saveUser($conn, "dept_secretary_mgmt.php?page=create", $user_type);
 	}
 
 
@@ -41,8 +38,7 @@
 	// SAVE ALUMNI OFFICER - OFFICER.PHP
 	if (isset($_POST['create_officer'])) {
 		$user_type = "2";
-		$path = "../images-users/";
-	    saveUser($conn, "officer_mgmt.php?page=create", $user_type, $path);
+	    saveUser($conn, "officer_mgmt.php?page=create", $user_type);
 	}
 
 

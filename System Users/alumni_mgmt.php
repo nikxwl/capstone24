@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-12">
                   <div class="form-group">
-                    <span class="text-dark"><b>Ext/Suffix</b></span>
+                    <span class="text-dark"><b>Suffix</b></span>
                     <input type="text" class="form-control"  placeholder="Ext/Suffix" name="suffix">
                   </div>
                 </div>
@@ -286,26 +286,6 @@
                     <input type="text" class="form-control"  placeholder="Current work/job" name="current_job" required>
                   </div>
                 </div>
-                <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                  <div class="form-group">
-                    <span class="text-dark"><b>Alumni's photo</b></span>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" name="fileToUpload" onchange="getImagePreview(event)" required>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                    <p class="help-block text-danger">Max. 500KB</p>
-                  </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-6 col-12">
-                  <div class="form-group">
-                    <label for="imagePreview" class="text-dark"><b>Preview:</b></label>
-                    <div class="image-preview" style="border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f8f9fa;">
-                      <img id="imagePreview" src="../images/image-holder.png" alt="Image Preview" class="img-fluid" style="width: 100%;">
-                    </div>
-                  </div>
-                </div> -->
               </div>
               <!-- END ROW -->
             </div>

@@ -37,7 +37,6 @@
                 <table id="example1" class="table table-bordered table-hover table-sm text-sm">
                   <thead>
                     <tr>
-                      <th>PHOTO</th>
                       <th>NAME</th>
                       <th>GENDER</th>
                       <th>EMAIL/CONTACT</th>
@@ -51,26 +50,15 @@
                     while ($row = mysqli_fetch_array($sql)) {
                     ?>
                     <tr>
-                      <td>
-                        <a data-toggle="modal" data-target="#viewphoto<?php echo $row['user_Id']; ?>">
-                          <img src="../images-users/<?php echo $row['image']; ?>" alt="" width="25" height="25" class="img-circle d-block m-auto">
-                        </a href="">
-                      </td>
                       <td><?php echo $row['firstname'].' '.$row['middlename'].' '.$row['lastname'].' '.$row['suffix']; ?></td>
                       <td><?= $row['gender'] ?></td>
                       <td><?php echo 'Email: '.$row['email']; ?> <br> <span class="text-info"><?php if($row['contact'] !== '') { echo 'Phone: +63 '.$row['contact']; } ?></span></td>
                       <td class="text-primary"><?php echo date("F d, Y h:i A", strtotime($row['created_at'])); ?></td>
                       <td>
                         <a class="btn btn-primary btn-xs" href="admin_view.php?user_Id=<?php echo $row['user_Id']; ?>"><i class="fas fa-eye"></i> View</a>
-                        <?php if($row['user_type'] === '0'): ?>
-                        <a class="btn btn-info btn-xs" href="admin_mgmt.php?page=<?php echo $row['user_Id']; ?>" style="pointer-events: none;opacity: .5;"><i class="fas fa-pencil-alt"></i> Edit</a>
-                        <button type="button" class="btn bg-danger btn-xs" data-toggle="modal" data-target="#delete<?php echo $row['user_Id']; ?>" disabled><i class="fas fa-trash"></i> Delete</button>
-                        <!-- <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#password<?php //echo $row['user_Id']; ?>" disabled><i class="fa-solid fa-lock"></i> Security</button> -->
-                        <?php else: ?>
                         <a class="btn btn-info btn-xs" href="admin_mgmt.php?page=<?php echo $row['user_Id']; ?>"><i class="fas fa-pencil-alt"></i> Edit</a>
                         <button type="button" class="btn bg-danger btn-xs" data-toggle="modal" data-target="#delete<?php echo $row['user_Id']; ?>"><i class="fas fa-trash"></i> Delete</button>
                         <!-- <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#password<?php //echo $row['user_Id']; ?>"><i class="fa-solid fa-lock"></i> Security</button> -->
-                        <?php endif; ?>
                       </td>
                     </tr>
                     <?php include 'admin_delete.php'; }  ?>
