@@ -201,30 +201,14 @@ CREATE TABLE `users` (
   `region` varchar(100) DEFAULT NULL,
   `year_graduated` int(11) DEFAULT NULL,
   `current_job` varchar(100) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `user_type` int(11) NOT NULL DEFAULT 4 COMMENT '0=Admin, 1=Evaluator, 2=Alumni Officer, 3=Department Secretary, 4=Alumni',
-  `verification_code` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `users`
---
 
-INSERT INTO `users` (`user_Id`, `username`, `firstname`, `middlename`, `lastname`, `suffix`, `dob`, `age`, `email`, `contact`, `birthplace`, `gender`, `civilstatus`, `occupation`, `religion`, `house_no`, `street_name`, `purok`, `zone`, `barangay`, `municipality`, `province`, `region`, `year_graduated`, `current_job`, `image`, `password`, `user_type`, `verification_code`, `created_at`) VALUES
-(66, 'Admin', 'Admisndsadsa', 'Admindasdsadsad', 'Adminsada', 'Admin', '1998-02-02', 26, 'admin@gmail.com', '9359428963', 'Female', 'Male', 'Single', 'Admin', 'Iglesia Ni Cristo', 'Dsas', 'Admin', 'Admin', 'Dsa', 'Admin', 'Admin', 'Dsa', 'Adminfss', 0, '', '2.jpg', '0192023a7bbd73250516f069df18b500', 0, 254152, '2022-11-24 16:00:00'),
-(72, 'evaluator', 'Evaluatorss', 'Evaluators', 'Evaluators', 'Jr', '2000-06-06', 23, 'userEvaluators@gmail.com', '9359428964', 'Evaluators', 'Female', 'Single', 'Evaluators', 'Iglesia Ni Cristo', 'Evaluators', 'Evaluators', 'Evaluators', 'Evaluators', 'Evaluators', 'Evaluators', '', 'Evaluators', 0, '', '2.jpg', '0192023a7bbd73250516f069df18b500', 1, 295016, '2022-12-26 16:00:00'),
-(86, 'alumniOfficer', 'SampleSample Sample', 'Sample Sample Sample', 'Sample Sample', 'Sample', '2008-02-27', 15, 'adminfdsfsfs@gmail.com', '9123456789', 'Samplef Fsdfsd', 'Male', 'Single', 'Sampleff Fsdfds', 'Evangelical Christianity', 'Fdfds Fdsf', 'Fsfsdfsdds ', 'Sf Fsdff', 'Fsdfsdfsdfs Fdsf Sfs', 'Fdsfd Fsfs Fs', 'Fdsfds', 'Fsdffdsf', 'Sdfsd', 0, '', '2.jpg', '0192023a7bbd73250516f069df18b500', 2, 0, '2023-12-18 11:19:29'),
-(87, 'DeptSecretary', 'Lestesd', 'Leste', 'Leste', 'Leste', '1986-02-26', 37, 'sonerwin12@gmail.com', '9123456789', 'Leste', 'Female', 'Widow/ER', 'Leste', 'Iglesia Ni Cristo', 'Leste', 'Leste', 'Leste', 'Leste', 'Leste', 'Leste', '', 'Leste', 0, '', '2.jpg', '0192023a7bbd73250516f069df18b500', 3, NULL, '2023-12-18 11:22:55'),
-(90, 'Alumni', 'Dsaf', 'Alumniko', 'Alumniko', 'Alumniko', '1992-01-28', 32, 'Alumniko@gmail.com', '9359428964', 'Alumniko', 'Female', 'Single', 'Alumniko', 'Hindu', 'Alumniko', 'Alumniko', 'Alumniko', 'Alumniko', 'Alumniko', 'Alumniko', 'Alumniko', 'Alumniko', 2000, 'CS', '2.jpg', '0192023a7bbd73250516f069df18b500', 4, NULL, '2024-02-01 10:58:19'),
-(91, 'Alumni222s', 'Alumni', 'Alumni', 'Alumni', 'Alumni', '1987-02-04', 36, 'sonerwinAlumni8@gmail.com', '9359428963', 'Alumni', 'Male', 'Married', 'Alumni', 'Judaism', 'Alumni', 'Alumni', 'Alumni', 'Alumni', 'Alumni', 'Alumni', 'Alumni', 'Alumni', 2001, 'Engineering', '2.jpg', '9b511f20893792860cb7dbb5c673855b', 4, NULL, '2024-02-01 11:59:26'),
-(92, 'AdminTwosssss', 'AdminTwo', 'AdminTwo', 'AdminTwo', 'AdminTwo', '1983-03-03', 41, 'sonerwin8@gmail.comAdminTwo', '9359428963', 'AdminTwo', 'Male', 'Married', 'AdminTwo', 'Methodist', 'AdminTwo', 'AdminTwo', 'AdminTwo', 'AdminTwo', 'AdminTwo', 'AdminTwo', 'AdminTwo', 'Region 1', 2001, 'IT', '2.jpg', 'c050760a0efddcc300ec0cdeffe06756', 4, NULL, '2024-02-01 12:00:38'),
-(94, 'Hak', 'Hak', 'Hak', 'Hak', 'Hak', '1970-02-02', 53, 'Hak@gmail.com', '9359428963', 'Hak', 'Male', 'Single', 'Hak', 'Iglesia Ni Cristo', 'Hak', 'Hak', 'Hak', 'Hak', 'Hak', 'Hak', 'Hak', 'Hak', 2003, 'Computer Science', '2.jpg', '7d1d036fc71ebf938c78308d84ea3681', 4, NULL, '2024-02-01 12:19:31'),
-(96, 'Secretary', 'SecretarySecretary', 'Secretary', 'Secretary', 'Secretary', '1964-03-11', 59, 'sonerwinSecretary8@gmail.com', '9359428963', 'Secretary', 'Male', 'Single', 'Secretary', 'United Church Of Christ In The Philippines', 'Secretary', 'Secretary', 'Secretary', 'Secretary', 'Secretary', 'Secretary', 'Secretary', 'Secretary', 0, 'Computer Science', '2.jpg', 'b180949356c963a85c848c43a5b90898', 4, NULL, '2024-02-01 15:20:22'),
-(97, 'Officers', 'Officer', 'Officer', 'Officer', 'Officer', '1984-01-31', 40, 'sonerwinOfficer8@gmail.com', '9359428963', 'Officer', 'Female', 'Married', 'Officer', 'Roman Catholic', 'Officer', 'Officer', 'Officer', 'Officers', 'Officer', 'Officer', 'Officer', 'Officer', 0, 'Cashier', '2.jpg', 'a361c1de58e73b1299b7c0449c5e85a4', 4, NULL, '2024-02-01 15:54:03'),
-(98, 'AkoEvealum', 'AkoEvealum', 'AkoEvealum', 'AkoEvealum', 'AkoEvealum', '1986-01-28', 38, 'sonerwin8@gmail.com', '9359428963', 'AkoEvealum', 'Male', 'Single', 'AkoEvealum', 'Judaism', 'AkoEvealum', 'AkoEvealum', 'AkoEvealum', 'AkoEvealum', 'AkoEvealum', 'AkoEvealum', 'AkoEvealum', 'AkoEvealum', 2222, 'Cashier', '2.jpg', '0192023a7bbd73250516f069df18b500', 4, NULL, '2024-02-01 18:30:44'),
-(99, 'Sadasdasdasdas', 'Dasdsad', 'Sadasd', 'Asdasd', 'Dsadsa', '1995-02-09', 29, 'sonerwin8dsadsadsaa@gmail.com', '9359428963', 'Dasdsad', 'Male', 'Single', 'Dsada', 'Iglesia Ni Cristo', 'Dsada', 'Dsadsa', 'Dsad', 'Dsad', 'Adasdsa', 'Dasdasd', 'Medasdasdasdsadellin', 'Region 12', 2222, 'Cashier', '', '5a1760628ea739e61d9bb798b50542d5', 4, NULL, '2024-03-06 16:04:39');
+
+
 
 --
 -- Indexes for dumped tables
