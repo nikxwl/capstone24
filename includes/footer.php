@@ -47,28 +47,9 @@
 
 
   <footer class="main-footer">
-    <!-- <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-12 bg-white">
-        <label>Mission</label>
-        <p class="text-sm text-justify text-muted">Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Veniam doloremque hic nam corrupti. Soluta ea, vero! Tenetur voluptatem rem, dolor quasi itaque inventore id nisi adipisci sunt, asperiores aut, provident?</p>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 col-12 bg-white">
-        <label>Vision</label>
-        <p class="text-sm text-justify text-muted">Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Veniam doloremque hic nam corrupti. Soluta ea, vero! Tenetur voluptatem rem, dolor quasi itaque inventore id nisi adipisci sunt, asperiores aut, provident?</p>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 col-12 bg-white">
-        <label>Contact Us</label>
-        <p class="text-sm text-justify text-muted"><i class="fa-solid fa-phone"></i> +63 9123456789</p>
-        <p class="text-sm text-justify text-muted"><i class="fa-solid fa-envelope"></i> admin@gmail.com</p>
-      </div>
-
-    </div>
-    <div class="dropdown-divider"></div> -->
-    <strong>Copyright &copy; 2024 <a href="#">Assessing Graduates Through Graduate Tracer</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
+    
+    <strong> 2024 <a href="#">Assessing Graduates Through Graduate Tracer</a>.</strong>
+    
   </footer>
 
   <!-- Control Sidebar -->
