@@ -11,7 +11,7 @@
 
 	
 	// SAVE SYSTEM USERS - ADMIN/ADMIN_MGMT.PHP || ADMIN/USERS_MGMT.PHP
-	function saveUser($conn, $page, $user_type = "4", $path = "images-users/", $year_graduated = NULL, $current_job = NULL) {
+	function saveUser($conn, $page, $user_type = "4", $year_graduated = NULL, $current_job = NULL) {
 		$username       = ucwords(mysqli_real_escape_string($conn, $_POST['username']));
 		$firstname      = ucwords(mysqli_real_escape_string($conn, $_POST['firstname']));
 		$middlename     = ucwords(mysqli_real_escape_string($conn, $_POST['middlename']));
@@ -34,8 +34,7 @@
 		$municipality   = ucwords(mysqli_real_escape_string($conn, $_POST['municipality']));
 		$province       = ucwords(mysqli_real_escape_string($conn, $_POST['province']));
 		$region         = ucwords(mysqli_real_escape_string($conn, $_POST['region']));
-		$password         = md5($_POST['password']);
-		$file             = basename($_FILES["fileToUpload"]["name"]);
+		$password         = ($_POST['password']);
 
 	    $check_uname = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
 	    if (mysqli_num_rows($check_uname) > 0) {
@@ -45,30 +44,8 @@
 		    if (mysqli_num_rows($check_email) > 0) {
 		        displayErrorMessage("Email already exists!", $page);
 		    } else {
-		        $target_dir = $path;
-		        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-		        $uploadOk = 1;
-		        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-		        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-		        if ($check == false) {
-		            displayErrorMessage("File is not an image.", $page);
-		            $uploadOk = 0;
-		        } elseif ($_FILES["fileToUpload"]["size"] > 500000) {
-		            displayErrorMessage("File must be up to 500KB in size.", $page);
-		            $uploadOk = 0;
-		        } elseif ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-		            displayErrorMessage("Only JPG, JPEG, PNG & GIF files are allowed.", $page);
-		            $uploadOk = 0;
-		        } elseif ($uploadOk == 0) {
-		            displayErrorMessage("Your file was not uploaded.", $page);
-		        } else {
-		            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-		            	$save = mysqli_query($conn, "INSERT INTO users (username, firstname, middlename, lastname, suffix, dob, age, email, contact, birthplace, gender, civilstatus, occupation, religion, house_no, street_name, purok, zone, barangay, municipality, province, region, year_graduated, current_job, image, password, user_type) VALUES ('$username', '$firstname', '$middlename', '$lastname', '$suffix', '$dob', '$age', '$email', '$contact', '$birthplace', '$gender', '$civilstatus', '$occupation', '$religion', '$house_no', '$street_name', '$purok', '$zone', '$barangay', '$municipality', '$province', '$region','$year_graduated', '$current_job',  '$file', '$password', '$user_type')");
-		            	displaySaveMessage($save, $page);
-		            } else {
-		            	displayErrorMessage("There was an error uploading your profile picture.", $page); 
-		            }
-		        }
+		        $save = mysqli_query($conn, "INSERT INTO users (username, firstname, middlename, lastname, suffix, dob, age, email, contact, birthplace, gender, civilstatus, occupation, religion, house_no, street_name, purok, zone, barangay, municipality, province, region, year_graduated, current_job, password, user_type) VALUES ('$username', '$firstname', '$middlename', '$lastname', '$suffix', '$dob', '$age', '$email', '$contact', '$birthplace', '$gender', '$civilstatus', '$occupation', '$religion', '$house_no', '$street_name', '$purok', '$zone', '$barangay', '$municipality', '$province', '$region','$year_graduated', '$current_job', '$password', '$user_type')");
+					displaySaveMessage($save, $page);
 		    }
 	    }
 	}
@@ -98,8 +75,7 @@
 		$municipality   = ucwords(mysqli_real_escape_string($conn, $_POST['municipality']));
 		$province       = ucwords(mysqli_real_escape_string($conn, $_POST['province']));
 		$region         = ucwords(mysqli_real_escape_string($conn, $_POST['region']));
-		$password         = md5($_POST['password']);
-		$file             = basename($_FILES["fileToUpload"]["name"]);
+		$password         = ($_POST['password']);
 
 	    $check_uname = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
 	    if (mysqli_num_rows($check_uname) > 0) {
@@ -109,7 +85,7 @@
 		    if (mysqli_num_rows($check_email) > 0) {
 		        displayErrorMessage("Email already exists!", $page);
 		    } else {
-		        $save = mysqli_query($conn, "INSERT INTO users (username, firstname, middlename, lastname, suffix, dob, age, email, contact, birthplace, gender, civilstatus, occupation, religion, house_no, street_name, purok, zone, barangay, municipality, province, region, year_graduated, current_job, image, password, user_type) VALUES ('$username', '$firstname', '$middlename', '$lastname', '$suffix', '$dob', '$age', '$email', '$contact', '$birthplace', '$gender', '$civilstatus', '$occupation', '$religion', '$house_no', '$street_name', '$purok', '$zone', '$barangay', '$municipality', '$province', '$region','$year_graduated', '$current_job',  '$file', '$password', '$user_type')");
+		        $save = mysqli_query($conn, "INSERT INTO users (username, firstname, middlename, lastname, suffix, dob, age, email, contact, birthplace, gender, civilstatus, occupation, religion, house_no, street_name, purok, zone, barangay, municipality, province, region, year_graduated, current_job, password, user_type) VALUES ('$username', '$firstname', '$middlename', '$lastname', '$suffix', '$dob', '$age', '$email', '$contact', '$birthplace', '$gender', '$civilstatus', '$occupation', '$religion', '$house_no', '$street_name', '$purok', '$zone', '$barangay', '$municipality', '$province', '$region','$year_graduated', '$current_job', '$password', '$user_type')");
             	displaySaveMessage($save, $page);
 		    }
 	    }

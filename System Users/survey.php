@@ -24,7 +24,7 @@ require_once 'sidebar.php';
         <div class="col-md-12">
           <div class="card card-default">
             <div class="card-header">
-              <h3 class="card-title">Please answer the survey questionnaire religiously.</h3>
+              <h3 class="card-title">Please answer the survey questionnaire honestly.</h3>
             </div>
             <div class="card-body p-0">
               <div class="bs-stepper">

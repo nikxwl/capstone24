@@ -48,7 +48,6 @@ require_once 'sidebar.php';
     <th width="8%">ORDER BY</th>
     <th width="35%">QUESTION</th>
     <th width="35%">TYPE/OPTIONS</th>
-    <th width="17%">DATE CREATED</th>
     <th width="13%">TOOLS</th>
   </tr>
 </thead>
@@ -79,7 +78,7 @@ require_once 'sidebar.php';
         }
       ?>                    
     </td>
-    <td class="text-primary"><?php echo date("F d, Y h:i A", strtotime($row['date_created'])); ?></td>
+    
     <td>
       <a class="btn btn-info btn-xs" href="questionnaire_mgmt.php?page=<?php echo $row['quest_ID']; ?>"><i class="fas fa-pencil-alt"></i> Edit</a>
       <button type="button" class="btn bg-danger btn-xs" data-toggle="modal" data-target="#delete<?php echo $row['quest_ID']; ?>"><i class="fas fa-trash"></i> Delete</button>

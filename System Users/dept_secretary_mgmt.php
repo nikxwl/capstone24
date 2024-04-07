@@ -269,35 +269,6 @@
                         <small id="wrong_pass_alert" class="text-bold" style="font-style: italic; font-size: 12px;"></small>
                     </div>
                 </div>
-
-                <div class="col-lg-12 mt-3 mb-2">
-                  <a class="h5 text-primary"><b>Additional information</b></a>
-                  <div class="dropdown-divider"></div>
-                </div>
-                <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-                  <div class="form-group">
-                    <span class="text-dark"><b>Department Secretary's photo</b></span>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" name="fileToUpload" onchange="getImagePreview(event)" required>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                     <!--  <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div> -->
-                    </div>
-                    <p class="help-block text-danger">Max. 500KB</p>
-                  </div>
-                </div>
-                <!-- LOAD IMAGE PREVIEW -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                  <div class="form-group">
-                    <label for="imagePreview" class="text-dark"><b>Preview:</b></label>
-                    <div class="image-preview" style="border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f8f9fa;">
-                      <img id="imagePreview" src="../images/image-holder.png" alt="Image Preview" class="img-fluid" style="width: 100%;">
-                    </div>
-                  </div>
-                </div>
               </div>
               <!-- END ROW -->
             </div>
